@@ -25,6 +25,6 @@ Steve has been tasked with helping his parents who are interested in investing i
 #### Disadvantages
 - A disadvantage to refactoring code is understanding what changes need to be made to the original logic.  Code might have values that are specific/hard-coded throughout and sometimes the logic has to be re-adjusted to accomodate for the removal of hard-coded values.  It's also possible that a change might be missed if there are multiple lines that need to be updated, and it will be challenging to track that missed instance later.
 
-- Another disadvantage can be the amount of time it takes to refactor code.  It isn't always clear how much code actually needs to be changed and how much time will need to be spent making each change, and this can pose a challenge when there's a time limit involved.  It would need to be determined if the time and effort required to make these changes is worth it (ex. will there be a noticeable improvement to the results?) or if it's just "busy work".
+- Another disadvantage can be the amount of time it takes to refactor code.  It isn't always clear how much code actually needs to be changed and how much time will need to be spent making each change, and this can pose a challenge when there's a time limit involved.  It would need to be determined if the time and effort required to make these changes is worth it (ex. will there be a noticeable improvement to the results?) or if it's just "busy work" and our time would be better spent elsewhere.
 
 ### How do these pros and cons apply to refactoring the original VBA script?
