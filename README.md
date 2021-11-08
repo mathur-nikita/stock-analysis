@@ -7,9 +7,30 @@ Steve has been tasked with helping his parents who are interested in investing i
 
 ## Results
 
+### 2017 Overview
+
 ![VBA_Challenge_2017.PNG](https://github.com/mathur-nikita/stock-analysis/blob/main/Resources/VBA_Challenge_2017.PNG)
 
+In 2017, it can be seen the return for nearly all of the green stocks was positive, with DQ having the highest percentage of return.  Only TERP had a negative return.  From this set of stocks it would seem 2017 was a good year for green stocks overall.  
+
+The time required to make all these calculations took about 0.2 seconds.  In comparison, the old version of the script took about 1.1 seconds and did not include any output formatting.
+
+![VBA_Challenge_old_2017_results.png](https://github.com/mathur-nikita/stock-analysis/blob/main/Resources/VBA_Challenge_old_2017_results.png)
+
+---
+### 2018 Overview
+
 ![VBA_Challenge_2018.PNG](https://github.com/mathur-nikita/stock-analysis/blob/main/Resources/VBA_Challenge_2018.PNG)
+
+In 2018, things were much more different.  It can be seen that most green stocks had a negative return, with DQ having the most negative percentage of return.  Only ENPH and RUN had positive returns.  From this set of stocks it would seem 2018 was a poor year for green stocks overall.
+
+The time required to make all these calculations took about 0.2 seconds.  In comparison, the old version of the script took about 1.3 seconds and did not include any output formatting.
+
+![VBA_Challenge_old_2018_results.png](https://github.com/mathur-nikita/stock-analysis/blob/main/Resources/VBA_Challenge_old_2018_results.png)
+
+---
+
+
 
 ## Summary
 
