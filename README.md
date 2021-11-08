@@ -3,7 +3,7 @@
 ## Overview of Project
 
 ### Purpose
-Steve has been tasked with helping his parents who are interested in investing in green energy.  They've already decided to invest all their money into a single stock (DAQO New Energy Corporation) without doing much research, and Steve is concerned about diversifying their funds.  Steve has collected the data of DAQO and other green energy stocks, and has asked us to help him analyze all of it.  This project is designed to assist him by automating analyses through coding so he can reuse this code on any of the stocks and minimize chances of errors.
+Steve has been tasked with helping his parents who are interested in investing in green energy.  They've already decided to invest all their money into a single stock (DAQO New Energy Corporation) without doing much research, and Steve is concerned about diversifying their funds.  Steve has collected the data of DAQO and other green energy stocks, and has asked us to help him analyze all of it.  This project is designed to assist him by automating analyses through coding so he can reuse this code on any of the stocks and minimize chances of errors.  The project is also refactoring an existing solution to maximize the efficiency of our analysis automation.
 
 ## Results
 
@@ -30,7 +30,17 @@ The time required to make all these calculations took about 0.2 seconds.  In com
 
 ---
 
-### Some thoughts:
+### Coding Differences
+
+In an earlier version of our script a nested for loop was being used to iterate through the list of tickers and also iterate through all of the rows in the worksheet.  In the refactored version there is only one for loop used to iterate not only through the list of tickers but also additional lists that hold output values.
+  - The "ticker" variable held the name of the ticker as a string and was populated by the outer loop of a nested for loop.  This was replaced with "tickerIndex" which holds the index of a ticker's location in a list as an integer.
+  - The "totalVolume" variable held a calculated sum of volumes belonging to a specific ticker (using the "ticker" variable).  This was replaced with an external array called "tickerVolumes" that holds all of the calculated sums.
+  - The worksheet of the specific year used to be activated at the beginning of the outer for loop to capture and calculate data, and then at the end of the outer for loop the analysis worksheet would be activated so output could be stored there.  This was replaced with two separate for loops that split the calculation tasks and output tasks.  The year worksheet is activated once before calculations begin, and then the analysis worksheet is activated for the second for loop to complete all outputs.
+  - The older code did not handle formatting of the output worksheet; that was left for a different subroutine.  This version of the code handles outputformatting at the end.
+
+---
+
+### Some thoughts on Green Stocks:
 - DQ seems to be the most volatile green stock to invest in.  You can make very high returns if the year is good for green stocks, but you can lose a lot too if the year is poor for green stocks.
 - ENPH and RUN seem to be more promising as green stocks that can result in positive returns even during a poor year, with ENPH being the strongest candidate because of its stability.
 - It would seem that there isn't a balance of positive and negative returns for green stocks; either the majority follow a positive return trend or a negative return trend.  While diversification might not save Steve's parents from incurring losses, it can probably help minimize them during a poor year (ex. about half of the green stocks shown for 2018 had losses under 25%).  
@@ -55,12 +65,6 @@ The time required to make all these calculations took about 0.2 seconds.  In com
 
 In a very early version of our code (from early on in the module) we were hard-coding the value of the year we wanted to analyze data for, and that hard-coded value was used to activate the corresponding worksheet.  Any time we needed to switch to a different year, we would have to change the code to use a new value for the year.  The refactored version of the script now allows the user to input the year they are interested in analyzing, and on the back end the code is able to activate the correct worksheet based on that input.  There is no need to keep changing the values of variables and no need to have duplicates of the script for all possible years.
 
-In an earlier version of our script a nested for loop was being used to iterate through the list of tickers and also iterate through all of the rows in the worksheet.  In the refactored version there is only one for loop used to iterate not only through the list of tickers but also additional lists that hold output values.
-  - The "ticker" variable held the name of the ticker as a string and was populated by the outer loop of a nested for loop.  This was replaced with "tickerIndex" which holds the index of a ticker's location in a list as an integer.
-  - The "totalVolume" variable held a calculated sum of volumes belonging to a specific ticker (using the "ticker" variable).  This was replaced with an external array called "tickerVolumes" that holds all of the calculated sums.
-  - The worksheet of the specific year used to be activated at the beginning of the outer for loop to capture and calculate data, and then at the end of the outer for loop the analysis worksheet would be activated so output could be stored there.  This was replaced with two separate for loops that split the calculation tasks and output tasks.  The year worksheet is activated once before calculations begin, and then the analysis worksheet is activated for the second for loop to complete all outputs.
-  - The older code did not handle formatting of the output worksheet; that was left for a different subroutine.  This version of the code handles outputformatting at the end.
-
-The aforementioned changes have affected the readability and efficiency of the code.  It's somewhat easier to follow what's going on because functionality has been separated between doing calculations/capturing data and displaying output.  By storing calculations and data in separate arrays we now have the opportunity to display that output in multiple ways by accessing the same source instead of needing to loop through data multiple times.  We are also able to iterate through the output arrays to perform additional calculations if necessary.  We can also see how much faster the code runs because we've eliminated the use of nested for loops.
+The changes made have affected the readability and efficiency of the code.  It's somewhat easier to follow what's going on because functionality has been separated between doing calculations/capturing data and displaying output.  By storing calculations and data in separate arrays we now have the opportunity to display that output in multiple ways by accessing the same source instead of needing to loop through data multiple times.  We are also able to iterate through the output arrays to perform additional calculations if necessary.  We can also see how much faster the code runs because we've eliminated the use of nested for loops.
 
 The challenging part about this would be taking the time to rework the logic.  The previous version of the script worked and was easy to follow since there were specific variables to hold specific values that could be reset per loop.  The current version of the script goes beyond just presenting calculations; it also provides flexibility should analysis criteria change in the future.  Not only is it necessary to accomodate for this flexibility it's also important to not alter the existing correct functionality.  In our case we were provided with a template that helped guide us to the new solution, but it would have taken much more time had we needed to complete this from scratch.
