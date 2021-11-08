@@ -40,7 +40,7 @@ In an earlier version of our script a nested for loop was being used to iterate 
 
 ---
 
-### Some thoughts on Green Stocks:
+### Some Thoughts on Green Stocks:
 - DQ seems to be the most volatile green stock to invest in.  You can make very high returns if the year is good for green stocks, but you can lose a lot too if the year is poor for green stocks.
 - ENPH and RUN seem to be more promising as green stocks that can result in positive returns even during a poor year, with ENPH being the strongest candidate because of its stability.
 - It would seem that there isn't a balance of positive and negative returns for green stocks; either the majority follow a positive return trend or a negative return trend.  While diversification might not save Steve's parents from incurring losses, it can probably help minimize them during a poor year (ex. about half of the green stocks shown for 2018 had losses under 25%).  
