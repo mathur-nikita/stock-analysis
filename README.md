@@ -36,7 +36,7 @@ In an earlier version of our script a nested for loop was being used to iterate 
   - The "ticker" variable held the name of the ticker as a string and was populated by the outer loop of a nested for loop.  This was replaced with "tickerIndex" which holds the index of a ticker's location in a list as an integer.
   - The "totalVolume" variable held a calculated sum of volumes belonging to a specific ticker (using the "ticker" variable).  This was replaced with an external array called "tickerVolumes" that holds all of the calculated sums.
   - The worksheet of the specific year used to be activated at the beginning of the outer for loop to capture and calculate data, and then at the end of the outer for loop the analysis worksheet would be activated so output could be stored there.  This was replaced with two separate for loops that split the calculation tasks and output tasks.  The year worksheet is activated once before calculations begin, and then the analysis worksheet is activated for the second for loop to complete all outputs.
-  - The older code did not handle formatting of the output worksheet; that was left for a different subroutine.  This version of the code handles outputformatting at the end.
+  - The older code did not handle formatting of the output worksheet; that was left for a different subroutine.  This version of the code handles output formatting at the end.
 
 ---
 
